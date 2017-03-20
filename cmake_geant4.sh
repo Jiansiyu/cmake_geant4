@@ -13,12 +13,10 @@ echo "Unpacking geant${version}.tar.gz..."
 until test -d geant${version}
 do tar -zxvf geant${version}.tar.gz
 done
-
+mkdir -p geant${version}-install 
 mkdir -p geant${version}-build
 cd geant${version}-build
 
-cd ../
-mkdir -p geant${version}-install 
 install_path=$(pwd)/geant${version}-install
 echo $(install_path)
 echo "Configuring geant${version}..."
