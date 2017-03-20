@@ -5,7 +5,8 @@ origdir=`dirname $0`
 
 echo "Downloading geant${version}.tar.gz..."
 until test -f geant${version}.tar.gz
-do wget http://geant4.cern.ch/support/source/geant${version}.tar.gz
+do wget http://geant4.web.cern.ch/geant4/support/source/geant${version}.tar.gz
+#http://geant4.cern.ch/support/source/geant${version}.tar.gz
 done
 
 echo "Unpacking geant${version}.tar.gz..."
