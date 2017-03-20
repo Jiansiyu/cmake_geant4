@@ -17,6 +17,10 @@ done
 mkdir -p geant${version}-build
 cd geant${version}-build
 
+cd ../
+mkdir -p geant${version}-install 
+install_path=$(pwd)/geant${version}-install
+echo $(install_path)
 echo "Configuring geant${version}..."
 cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo \
  -DCMAKE_INSTALL_PREFIX=/usr/local/geant4/geant${version} \
@@ -32,9 +36,9 @@ j=`cat /proc/cpuinfo | grep processor | wc -l`
 echo "Make will use $j parallel jobs."
 
 echo "Building geant${version}..."
-make -j $j -k
+#make -j $j -k
 
 echo "Installing geant${version}..."
-make -j $j install
+#make -j $j install
 
 cd "${origdir}"
