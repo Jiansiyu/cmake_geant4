@@ -13,15 +13,17 @@ echo "Unpacking geant${version}.tar.gz..."
 until test -d geant${version}
 do tar -zxvf geant${version}.tar.gz
 done
-mkdir -p geant${version}-install 
-mkdir -p geant${version}-build
-cd geant${version}-build
 
-install_path=$(pwd)/geant${version}-install
-echo $(install_path)
+mkdir -p geant${version}-install 
+currentPath="$(pwd)"
+install_path=${currentPath}/geant${version}-install
+mkdir -p geant${version}-build
+
+cd geant${version}-build
+echo "install path.. ${install_path}"
 echo "Configuring geant${version}..."
 cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo \
- -DCMAKE_INSTALL_PREFIX=/usr/local/geant4/geant${version} \
+ -DCMAKE_INSTALL_PREFIX=${install_path} \
  -DGEANT4_USE_GDML=ON \
  -DGEANT4_INSTALL_DATA=ON \
  -DGEANT4_USE_QT=ON \
@@ -29,6 +31,7 @@ cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo \
  -DGEANT4_BUILD_MULTITHREADED=ON \
  -DXERCESC_LIBRARY=/usr/lib/x86_64-linux-gnu/libxerces-c.so \
  ../geant${version}
+ 
 
 j=`cat /proc/cpuinfo | grep processor | wc -l`
 echo "Make will use $j parallel jobs."
