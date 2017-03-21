@@ -37,9 +37,9 @@ j=`cat /proc/cpuinfo | grep processor | wc -l`
 echo "Make will use $j parallel jobs."
 
 echo "Building geant${version}..."
-#make -j $j -k
+make -j $j -k
 
 echo "Installing geant${version}..."
-#make -j $j install
+make -j $j install
 
 cd "${origdir}"
