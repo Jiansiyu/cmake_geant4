@@ -8,7 +8,7 @@ cmake_geant4.sh <version>
 
 # Description
 
-This script downloads and builds Geant4 from the source distribution. It installs the resulting binaries in `/usr/local/geant4/<version>`. Multiple versions can be installed next to each other, and the desired version can be loaded by sourcing the file `bin/geant4.sh`.
+This script downloads and builds Geant4 from the source distribution. It installs the resulting binaries in `geant4{version}-install`. Multiple versions can be installed next to each other, and the desired version can be loaded by sourcing the file `bin/geant4.sh`.
 
 # Examples
 
