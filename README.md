@@ -13,7 +13,8 @@ This script downloads and builds Geant4 from the source distribution. It install
 # Examples
 
 ```
-./cmake_geant4.sh 4.10.02.p02
+./cmake_geant4.sh 4.10.03.p01  
+(current version 20th march 2017)
 ```
 
 # License
